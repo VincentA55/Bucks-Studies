@@ -1,0 +1,12 @@
+Student johnM = new Student("John Mick", "112542");
+Student billyB = new Student("Billy Bob", "666555");
+Student ladyL = new Student("Lady Luck", "111000");
+LabClass co452Lab = new LabClass(3);
+co452Lab.setInstructor("Nicholas Day");
+co452Lab.setRoom("G100");
+co452Lab.setTime("Tuesday 29th September");
+ladyL.addCredits(20);
+co452Lab.enrollStudent(johnM);
+co452Lab.enrollStudent(billyB);
+co452Lab.enrollStudent(ladyL);
+johnM.changeName("Johnathan Mick");
