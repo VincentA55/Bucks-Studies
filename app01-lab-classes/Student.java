@@ -13,6 +13,8 @@ public class Student
     private String name;
     // the student ID
     private String id;
+    // the students course name and code
+    private String course;
     // the amount of credits for study taken so far
     private int credits;
     
@@ -76,6 +78,17 @@ public class Student
     {
         return name.substring(0,4) + id.substring(0,3);
     }
+    
+    /** 
+     * Add the students course
+     */
+    
+    public void addCourse(Course newCourse)
+    {
+        
+    
+}
+    
     
     /**
      * Print the student's name and ID number to the output terminal.
