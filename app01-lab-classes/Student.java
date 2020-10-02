@@ -88,7 +88,8 @@ public class Student
     public void addCourse(Course newCourse)
     {
       course.add(newCourse);
-      course.get(0);
+      
+      
     
 }
     
@@ -100,11 +101,8 @@ public class Student
     {
         System.out.println(name);
         System.out.println("Student ID: " + id);
-        System.out.println("Course:");
-        for(Course course : course);
-        {
-            course.print();
-        }
+        System.out.println("Course:"+ course.get(0));
+       
         System.out.println("Credits: " + credits);
     }
 }

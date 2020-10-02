@@ -30,3 +30,11 @@ Course computing = new Course("G400", "Computing");
 joelL.addCourse(computing);
 joelL.print();
 Joel Luben, student ID: 785421, Course:[Course@385b5da9], credits: 0
+Student kenK = new Student("Kenny Knockers", "542154");
+Course computing = new Course("G400", "Computing");
+kenK.addCourse(computing);
+kenK.printList();
+Kenny Knockers
+Student ID: 542154
+Course:Course@7878e2c
+Credits: 0
