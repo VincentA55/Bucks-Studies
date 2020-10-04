@@ -91,7 +91,7 @@ public class LabClass
         
         for(Student student : students) 
         {
-            student.print();
+            System.out.print();
         }
         
         System.out.println("Number of students: " + numberOfStudents());
