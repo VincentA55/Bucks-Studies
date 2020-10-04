@@ -13,7 +13,7 @@ public class Course
     private String title;
 
     /**
-     * 
+     * set the code and name for a course
      */
     public Course(String courseCode, String courseName)
     {
@@ -21,5 +21,14 @@ public class Course
         title = courseName;
     }
 
+    public String getCode()
+    {
+     return codeNumber;
+    }
+    
+    public String getName()
+    {
+     return title; 
+    }
     
 }

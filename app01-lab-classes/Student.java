@@ -88,8 +88,8 @@ public class Student
     
     public void addCourse(Course newCourse)
     {
-      course.add(newCourse);
-      this.course = course;
+      
+      Course course = new Course();
       
     
 }
