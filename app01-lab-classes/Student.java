@@ -95,7 +95,7 @@ public class Student
     {
         System.out.println(name);
         System.out.println("Student ID: " + id);
-        System.out.println("Course:"+ course.getName() + course.getCode());
+        System.out.println("Course:"+ course.getName() + ", " + course.getCode());
        
         System.out.println("Credits: " + credits);
     }
