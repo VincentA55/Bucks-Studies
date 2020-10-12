@@ -1,19 +1,17 @@
 /**
  * TicketMachine models a ticket machine that issues
  * flat-fare tickets.
- * The price of a ticket is specified via the constructor.
  * Instances will check to ensure that a user only enters
  * sensible amounts of money, and will only print a ticket
  * if enough money has been input.
  * 
  * @author David J. Barnes and Michael Kölling
- * @version 2016.02.29
+ * @version 12/10/2020
  * 
  * Modified by Vincent Assolutissimamente
  */
 
 import java.util.ArrayList;
-
 
 public class TicketMachine
 {
@@ -30,13 +28,14 @@ public class TicketMachine
     
     private static final Ticket highWycombeTicket = new Ticket("High Wycombe", 330, "10th October");
     
-   
+    // An ArrayList of all the available tickets
     private ArrayList<Ticket> availableTickets;
-    
+    // The ticket that is currently selected
     private Ticket selectedTicket;
     
     /**
      * Create a machine that issues tickets of the given price.
+     * Also creates the array and adds the static tickets to it then prints them with their prices.
      */
     public TicketMachine()
     {
@@ -67,6 +66,10 @@ public class TicketMachine
         return balance;
     }
     
+    /**
+     * The method for selecting which ticket the user wants
+     * Updates the price accordingly and prints the selected ticket.
+     */
     public void selectTicket(String destination)
     {
         if (destination == "aylesbury")
@@ -93,12 +96,9 @@ public class TicketMachine
         }
     }
     
-    
-    
-    
     /**
      * Receive an amount of money from a customer.
-     * Check that the amount is sensible.
+     * Checks that the amount is one of the four accepted coins
      */
     public void insertMoney(int amount)
     {
@@ -126,7 +126,7 @@ public class TicketMachine
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
-            System.out.println("# The BlueJ Line");
+            System.out.println("# " + selectedTicket.getDestination());
             System.out.println("# Ticket");
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
@@ -146,7 +146,10 @@ public class TicketMachine
                     
         }
     }
-
+    
+    /**
+     * Prints all the available tickets
+     */
     public void printAvailableTickets()
     {
         for(Ticket ticket : availableTickets)
@@ -154,8 +157,6 @@ public class TicketMachine
             System.out.println(ticket.printTicket());    
         }
     }
-    
-    
     
     /**
      * Return the money in the balance.
@@ -165,16 +166,23 @@ public class TicketMachine
     {
         int amountToRefund;
         amountToRefund = balance;
+        System.out.println(amountToRefund + " cents Refunded");
         balance = 0;
         return amountToRefund;
     }
     
+    /**
+     * Displays the current ticket selected
+     */
     private void printSelectedTicket()
     {
         System.out.println("Selected Ticket: " + this.selectedTicket.printTicket());
         System.out.println("Please insert coins to purchase this ticket!");
     }
     
+    /**
+     * Sets the price
+     */
     private void setPrice()
     {
         if(this.selectedTicket != null)
@@ -182,9 +190,5 @@ public class TicketMachine
             this.price = this.selectedTicket.getPrice();
         }
     }
-    
-    
-    
-    
 }
 
