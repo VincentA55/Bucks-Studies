@@ -24,9 +24,15 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
     
-    private static final Ticket aylesburyTicket = new Ticket();
-
+    private static final Ticket aylesburyTicket = new Ticket("Aylesbury", 220, "21st October");
+    
+    private static final Ticket amershamTicket = new Ticket("Amersham", 300, "12th October");
+    
+    private static final Ticket highWycombeTicket = new Ticket("High Wycombe", 330, "10th October");
+    
+   
     private ArrayList<Ticket> availableTickets;
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -37,6 +43,9 @@ public class TicketMachine
         total = 0;
         availableTickets = new ArrayList<Ticket>();
         this.availableTickets.add(aylesburyTicket);
+        this.availableTickets.add(amershamTicket);
+        this.availableTickets.add(highWycombeTicket);
+        printAvailableTickets();
     }
 
     /**
@@ -65,6 +74,7 @@ public class TicketMachine
         if(amount > 0) 
         {
             balance = balance + amount;
+            printTicket();
         }
         else 
         {
@@ -103,6 +113,16 @@ public class TicketMachine
         }
     }
 
+    public void printAvailableTickets()
+    {
+        for(Ticket ticket : availableTickets)
+        {
+            System.out.println(ticket.printTicket());    
+        }
+    }
+    
+    
+    
     /**
      * Return the money in the balance.
      * The balance is cleared.

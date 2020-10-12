@@ -1,23 +1,43 @@
 
 /**
- * Write a description of class Ticket here.
+ * A Ticket class for desitnations, including the price and date purchased
  *
  * @author Vincent A.
  * @version 11/10/2020
  */
 public class Ticket
 {
-    public Ticket aylesburyTicket;
+    private String destination;
+    
+    private int price;
+    
+    private String date;
+    
+    
+    public Ticket(String destination, int price, String date)
     {
-       int price = 220;
-       String destination = "Aylesbury";
-       int datePurchased = 2020;
+       this.destination = destination;
+       this.price = price;
+       this.date = date;
     }
     
-    public void amershamTicket()
+    public String getDestination()
     {
-        int price = 300;
-        String destination = "Amersham";
-        int datePurchased = 2020;
+      return this.destination;
+    }
+    
+    public int getPrice()
+    {
+        return this.price;
+    }
+    
+    public String date()
+    {
+       return this.date; 
+    }
+    
+    public String printTicket()
+    {
+      return (this.destination + ", Price £" + this.price);  
     }
 }
