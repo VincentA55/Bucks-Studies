@@ -33,12 +33,14 @@ public class TicketMachine
    
     private ArrayList<Ticket> availableTickets;
     
+    private Ticket selectedTicket;
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
+        price = 0;
         balance = 0;
         total = 0;
         availableTickets = new ArrayList<Ticket>();
@@ -53,7 +55,7 @@ public class TicketMachine
      */
     public int getPrice()
     {
-        return price;
+       return price;
     }
 
     /**
@@ -64,14 +66,44 @@ public class TicketMachine
     {
         return balance;
     }
-
+    
+    public void selectTicket(String destination)
+    {
+        if (destination == "aylesbury")
+        {
+            this.selectedTicket = this.aylesburyTicket;
+            setPrice();
+            printSelectedTicket();
+        }
+        else if (destination == "amersham")
+        {
+            this.selectedTicket = this.amershamTicket;
+            setPrice();
+            printSelectedTicket();
+        }
+        else if (destination == "high wycombe")
+        {
+            this.selectedTicket = this.highWycombeTicket;
+            setPrice();
+            printSelectedTicket();
+        }
+        else 
+        {
+            System.out.println("Please type your destination again");
+        }
+    }
+    
+    
+    
+    
     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
     public void insertMoney(int amount)
     {
-        if(amount > 0) 
+        if(amount == 10 || amount == 20 || 
+            amount == 100 || amount == 200)
         {
             balance = balance + amount;
             printTicket();
@@ -90,7 +122,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance >= price) 
+        if(this.balance >= this.price) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
@@ -104,6 +136,8 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the price.
             balance = balance - price;
+            
+            refundBalance();
         }
         else 
         {
@@ -134,4 +168,23 @@ public class TicketMachine
         balance = 0;
         return amountToRefund;
     }
+    
+    private void printSelectedTicket()
+    {
+        System.out.println("Selected Ticket: " + this.selectedTicket.printTicket());
+        System.out.println("Please insert coins to purchase this ticket!");
+    }
+    
+    private void setPrice()
+    {
+        if(this.selectedTicket != null)
+        {
+            this.price = this.selectedTicket.getPrice();
+        }
+    }
+    
+    
+    
+    
 }
+
