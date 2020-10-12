@@ -19,6 +19,8 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    
+    private static final Ticket aylesburyTicket = new Ticket();
 
     /**
      * Create a machine that issues tickets of the given price.

@@ -7,17 +7,19 @@
  */
 public class Ticket
 {
-    public aylesburyTicket ()
+    public void aylesburyTicket()
     {
-       public static int cost = 220;
-       public static String destination = "Aylesbury";
-       public static int datePurchased = 2020;
+       int cost = 220;
+       String destination = "Aylesbury";
+       int datePurchased = 2020;
     }
     
-    public amershamTicket()
+    public void amershamTicket()
     {
-        public static int cost = 300;
-        public static String destination = "Amersham";
-        public static int datePurchased = 2020;
+        int cost = 300;
+        String destination = "Amersham";
+        int datePurchased = 2020;
+        
+    
     }
 }
