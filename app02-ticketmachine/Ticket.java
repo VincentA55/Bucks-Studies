@@ -7,20 +7,17 @@
  */
 public class Ticket
 {
-    // the destination of the ticket
-    private String destination;
-    // the cost of the ticket
-    private int cost;
-    // the date purchased
-    private int datePurchased;
-
-   
-    private Ticket ()
+    public aylesburyTicket ()
     {
-        cost = cost;
-        destination = "Aylesbury";
-        datePurchased = 2020;
-       
+       public static int cost = 220;
+       public static String destination = "Aylesbury";
+       public static int datePurchased = 2020;
     }
     
+    public amershamTicket()
+    {
+        public static int cost = 300;
+        public static String destination = "Amersham";
+        public static int datePurchased = 2020;
+    }
 }
