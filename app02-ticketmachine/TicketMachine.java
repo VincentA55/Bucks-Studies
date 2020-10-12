@@ -11,6 +11,10 @@
  * 
  * Modified by Vincent Assolutissimamente
  */
+
+import java.util.ArrayList;
+
+
 public class TicketMachine
 {
     // The price of a ticket from this machine.
@@ -22,6 +26,7 @@ public class TicketMachine
     
     private static final Ticket aylesburyTicket = new Ticket();
 
+    private ArrayList<Ticket> availableTickets;
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -30,6 +35,8 @@ public class TicketMachine
         price = cost;
         balance = 0;
         total = 0;
+        availableTickets = new ArrayList<Ticket>();
+        this.availableTickets.add(aylesburyTicket);
     }
 
     /**
