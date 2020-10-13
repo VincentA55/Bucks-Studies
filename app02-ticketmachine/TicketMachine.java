@@ -42,6 +42,7 @@ public class TicketMachine
         price = 0;
         balance = 0;
         total = 0;
+        selectedTicket = null;
         availableTickets = new ArrayList<Ticket>();
         this.availableTickets.add(aylesburyTicket);
         this.availableTickets.add(amershamTicket);
@@ -106,12 +107,12 @@ public class TicketMachine
             amount == 100 || amount == 200)
         {
             balance = balance + amount;
-            printTicket();
+            System.out.println(amount + " inserted");
+         
         }
         else 
         {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
+            System.out.println("This machine only accepts 10p, 20p, £1, £2 coins");
         }
     }
 
@@ -122,7 +123,7 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(this.balance >= this.price) 
+        if(this.balance >= this.price && selectedTicket.getDestination() != "") 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
@@ -139,11 +140,15 @@ public class TicketMachine
             
             refundBalance();
         }
+        else if(selectedTicket.getDestination() == null)
+        {
+            System.out.println("Please select a ticket to purchase");
+                    
+        }
         else 
         {
             System.out.println("You must insert at least: " +
                                (price - balance) + " more cents.");
-                    
         }
     }
     
@@ -167,6 +172,7 @@ public class TicketMachine
         int amountToRefund;
         amountToRefund = balance;
         System.out.println(amountToRefund + " cents Refunded");
+        System.out.println(" ");
         balance = 0;
         return amountToRefund;
     }
