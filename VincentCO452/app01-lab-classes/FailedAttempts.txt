@@ -1,0 +1,40 @@
+Student daveD = new Student("David Doo", "548654");
+Course computing = new Course("G400", "Computing");
+daveD.addCourse(computing);
+Student bobH = new Student("Bobby Hull", "111111");
+Course computing = new Course("G400", "Computing");
+bobH.addCourse("Computing");
+Student bimmyb = new Student("Bimmy Boy", "123456");
+Course computing = new Course("G400", "Computing");
+bimmyb.addCourse(computing);
+Student jimmyJ = new Student("Jimmy Jeeee", "123654");
+Course computing = new Course("G400", "Computing");
+jimmyJ.addCourse(computing);
+    Exception occurred.
+Student lillyL = new Student("Lilly Lang", "555666");
+Course computing = new Course("G400", "Computing");
+lillyL.addCourse(computing);
+Student steveM = new Student("Steve Mountain", "695847");
+Course computing = new Course("G400", "Computing");
+steveM.addCourse(computing);
+Student student1 = new Student("student1", "445454");
+student1.print();
+student1, student ID: 445454Course:[], credits: 0
+Student fredF = new Student("Fred Fulls", "7777777");
+Course computing = new Course("G400", "Computing");
+fredF.addCourse(computing);
+fredF.print();
+Fred Fulls, student ID: 7777777, Course:[Course@4b4e5a0], credits: 0
+Student joelL = new Student("Joel Luben", "785421");
+Course computing = new Course("G400", "Computing");
+joelL.addCourse(computing);
+joelL.print();
+Joel Luben, student ID: 785421, Course:[Course@385b5da9], credits: 0
+Student kenK = new Student("Kenny Knockers", "542154");
+Course computing = new Course("G400", "Computing");
+kenK.addCourse(computing);
+kenK.printList();
+Kenny Knockers
+Student ID: 542154
+Course:Course@7878e2c
+Credits: 0

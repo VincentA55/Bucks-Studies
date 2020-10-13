@@ -1,0 +1,61 @@
+TicketMachine ticketMachine = new TicketMachine();
+Aylesbury, Price: £220
+Amersham, Price: £300
+High Wycombe, Price: £330
+ticketMachine.selectTicket("aylesbury");
+Selected Ticket: Aylesbury, Price: £220
+Please insert coins to purchase this ticket!
+ticketMachine.insertMoney(200);
+You must insert at least: 20 more cents.
+ticketMachine.insertMoney(20);
+##################
+# Aylesbury
+# Ticket
+# 220 cents.
+##################
+
+0 cents Refunded
+ticketMachine.selectTicket("amersham");
+Selected Ticket: Amersham, Price: £300
+Please insert coins to purchase this ticket!
+ticketMachine.insertMoney(200);
+You must insert at least: 100 more cents.
+ticketMachine.insertMoney(100);
+##################
+# Amersham
+# Ticket
+# 300 cents.
+##################
+
+0 cents Refunded
+ticketMachine.selectTicket("high wycombe");
+Selected Ticket: High Wycombe, Price: £330
+Please insert coins to purchase this ticket!
+ticketMachine.insertMoney(200);
+You must insert at least: 130 more cents.
+ticketMachine.insertMoney(200);
+##################
+# High Wycombe
+# Ticket
+# 330 cents.
+##################
+
+70 cents Refunded
+ticketMachine.selectTicket("amersham");
+Selected Ticket: Amersham, Price: £300
+Please insert coins to purchase this ticket!
+ticketMachine.insertMoney(100);
+You must insert at least: 200 more cents.
+ticketMachine.printTicket();
+You must insert at least: 200 more cents.
+ticketMachine.refundBalance()
+100 cents Refunded
+    returned int 100
+ticketMachine.selectTicket("london");
+Please type your destination again
+ticketMachine.insertMoney(700);
+Use a positive amount rather than: 700
+ticketMachine.printAvailableTickets();
+Aylesbury, Price: £220
+Amersham, Price: £300
+High Wycombe, Price: £330
