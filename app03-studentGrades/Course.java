@@ -9,6 +9,8 @@ public class Course
 {
     //the name of the course
     private String title;
-    // 
+    // the modules of a given course
+    private Module module;
+    
     
 }
