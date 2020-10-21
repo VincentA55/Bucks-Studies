@@ -13,5 +13,16 @@ public class Module
     private String code;
     //the students mark for each module;
     private int mark;
-
+    
+    public Module(String title,String code)
+    {
+     this.title = title;
+     this.code = code;
+     this.mark = 0;
+    }
+    
+    public String getCode()
+    {
+       return code;
+    }
 }
