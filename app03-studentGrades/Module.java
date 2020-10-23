@@ -11,8 +11,8 @@ public class Module
     private String title;
     //the code for the module
     private String code;
-    //the students mark for each module;
-    private int mark;
+    //the students marks for each module;
+    private int marks;
     
     /**
      * Creates a Module with a title and code, and default marks at 0
@@ -21,7 +21,7 @@ public class Module
     {
      this.title = title;
      this.code = code;
-     this.mark = 0;
+     this.marks = 0;
     }
     
     /**
@@ -40,15 +40,24 @@ public class Module
         return title;
     }
     
+    public void addMarks(int marks)
+    {
+       this.marks = (this.marks + marks);
+    }
+    
+    
     /**
      * returns the mark of a module
      */
     private int getMark()
     {
-        return mark;
+        return marks;
     }
     
-    public String printModule()
+    /**
+     * returns the code and title as a string
+     */
+    public String getDetails()
     {
         return (this.code + ": " + this.title);
     }

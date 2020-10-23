@@ -36,7 +36,7 @@ public class Course
     {
      for(Module module : modules)
      {
-         System.out.println(module.printModule());
+         System.out.println(module.getDetails());
      }
     }
     
