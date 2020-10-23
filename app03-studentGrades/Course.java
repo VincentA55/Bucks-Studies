@@ -85,19 +85,13 @@ public class Course
         System.out.println("Final Grade: "+ this.finalGrade);
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     /**
-     * prints out all the current modules
+     * prints out all the current modules for a course
      */
-    public void printModules()
+    public void printCourse()
     {
+     System.out.println(this.title);
+     
      for(Module module : modules)
      {
          System.out.println(module.getDetails());

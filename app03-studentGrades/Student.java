@@ -26,8 +26,17 @@ public class Student
         name = fullName;
         id = studentID;
         credits = 0;
+        course = null;
     }
-
+    
+    /**
+     * Enrolles a student on a course
+     */
+    public void enrollStudent(Course course)
+    {
+        this.course = course;
+    }
+    
     /**
      * Return the full name of this student.
      */
@@ -85,5 +94,15 @@ public class Student
     public void print()
     {
         System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+    }
+    
+    /**
+     * Prints out the final grade of the student
+     */
+    public void printFinalGrade()
+    {
+       //System.out.println (Course.getFinalGrade() + " "); 
+    
+    
     }
 }
