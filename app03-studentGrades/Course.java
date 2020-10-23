@@ -13,6 +13,8 @@ public class Course
     private ArrayList<Module> modules;
     // the total current marks
     private int currentMarks;
+    //the final grade 
+    private String finalGrade;
     
     /**
      *  creates a course with a title and a list for its modules
@@ -22,6 +24,7 @@ public class Course
         this.title = title;
         modules = new ArrayList<Module>();
         this.currentMarks = 0;
+        this.finalGrade = null;
     }
     
     /**
@@ -33,7 +36,43 @@ public class Course
     }
     
     /**
-     * calculates and prints the final grade
+     * calculates the final grade and coverts it into a letter
+     */
+    private void calcFinalGrade()
+    {
+        if(this.currentMarks >= 0 && this.currentMarks <= 39)
+        {
+            this.finalGrade = "F";
+        }
+        
+        else if(this.currentMarks >= 40 && this.currentMarks <=49)
+        {
+            this.finalGrade = "D";
+        }
+        
+        else if(this.currentMarks >= 50 && this.currentMarks <= 59)
+        {
+            this.finalGrade = "C";
+        }
+        
+        else if(this.currentMarks >= 60 && this.currentMarks <= 69)
+        {
+            this.finalGrade = "B";
+        }
+       
+        else if(this.currentMarks >= 70 && this.currentMarks <= 100)
+        {
+            this.finalGrade = "A";
+        }
+    
+        else 
+        {
+            System.out.println("Unexpected error");
+        }
+    }
+    
+    /**
+     * gets and prints the  grades per module and the final grade 
      */
     public void getFinalGrade()
     {
@@ -42,7 +81,8 @@ public class Course
         System.out.println(module.getDetails());
         this.currentMarks = (currentMarks + module.getMark());
         }
-        System.out.println("Final Grade: "+ currentMarks);
+        calcFinalGrade();
+        System.out.println("Final Grade: "+ this.finalGrade);
     }
     
     
