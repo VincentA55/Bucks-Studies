@@ -45,11 +45,10 @@ public class Module
        this.marks = (this.marks + marks);
     }
     
-    
     /**
      * returns the mark of a module
      */
-    private int getMark()
+    public int getMark()
     {
         return marks;
     }
@@ -59,6 +58,6 @@ public class Module
      */
     public String getDetails()
     {
-        return (this.code + ": " + this.title);
+        return (this.code + ": " + this.title + " " +this.marks + "/100");
     }
 }
