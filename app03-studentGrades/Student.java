@@ -93,7 +93,7 @@ public class Student
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", Student ID: " + id + ", credits: " + credits);
     }
     
     /**
@@ -101,7 +101,8 @@ public class Student
      */
     public void printFinalGrade()
     {
-       //System.out.println (Course.getFinalGrade() + " "); 
+        print();
+        this.course.getFinalGrade(); 
     
     
     }
