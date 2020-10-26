@@ -1,0 +1,30 @@
+Student jimJ = new Student("Jimmy Jehee", "2156847");
+Course computer = new Course("Computer");
+jimJ.enrollStudent(computer);
+Module ai = new Module("Artificial Inteligence", "CO003");
+Module security = new Module("Cyber Security", "CO078");
+Module digitech = new Module("Digital Technologies", "CO139");
+Module blueJ = new Module("Blue J", "CO204");
+computer.addModule(ai);
+computer.addModule(security);
+computer.addModule(digitech);
+computer.addModule(blueJ);
+ai.addMarks(15);
+security.addMarks(20);
+digitech.addMarks(11);
+blueJ.addMarks(7);
+ai.getDetails()
+    returned String "CO003: Artificial Inteligence 15/100"
+computer.printCourse();
+Computer
+CO003: Artificial Inteligence 15/100
+CO078: Cyber Security 20/100
+CO139: Digital Technologies 11/100
+CO204: Blue J 7/100
+jimJ.printFinalGrade();
+Jimmy Jehee, Student ID: 2156847, credits: 0
+CO003: Artificial Inteligence 15/100
+CO078: Cyber Security 20/100
+CO139: Digital Technologies 11/100
+CO204: Blue J 7/100
+Final Grade: C
