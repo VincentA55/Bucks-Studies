@@ -3,8 +3,8 @@
  * The demonstration becomes properly functional as
  * the StockManager class is completed.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author Vincent Assolutissimamente.
+ * @version 30.10.2020
  */
 public class StockDemo
 {
