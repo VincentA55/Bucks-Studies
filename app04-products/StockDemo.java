@@ -14,6 +14,7 @@ public class StockDemo
     /**
      * Create a StockManager and populate it with a few
      * sample products.
+     * I have hard coded them in to save myslef time while testing
      */
     public StockDemo()
     {
@@ -21,6 +22,13 @@ public class StockDemo
         manager.addProduct(new Product(132, "Clock Radio"));
         manager.addProduct(new Product(37,  "Mobile Phone"));
         manager.addProduct(new Product(23,  "Microwave Oven"));
+        manager.addProduct(new Product(1, "Hat"));
+        manager.addProduct(new Product(55, "Sock"));
+        manager.addProduct(new Product(111, "Electric ruler"));
+        manager.addProduct(new Product(97, "Pet Rock"));
+        manager.addProduct(new Product(48, "Meat Lamp"));
+        manager.addProduct(new Product(12, "Swivle Chair"));
+        manager.addProduct(new Product(133, "Radio that tells time"));
     }
     
     /**
@@ -31,8 +39,6 @@ public class StockDemo
     public void demo()
     {
         // Show details of all of the products.
-        manager.printProductDetails();
-        // Take delivery of 5 items of one of the products.
         manager.delivery(132, 5);
         manager.delivery(37, 10);
         manager.delivery(23, 7);
