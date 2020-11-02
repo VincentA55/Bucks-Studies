@@ -37,8 +37,12 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
-        
+      for (Product product : stock){
+      if (id == product.getID()){
+          product.increaseQuantity(amount);
+        }    
     }
+    }   
     
     /**
      * Try to find a product in the stock with the given id.
@@ -76,5 +80,11 @@ public class StockManager
      */
     public void printProductDetails()
     {
+        System.out.println("Vinnys Stock List");
+        System.out.println("=================");
+        for (Product product : stock){
+        System.out.println(product.toString());
+        }
+        System.out.println("=================");
     }
 }
