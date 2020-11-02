@@ -37,6 +37,7 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        
     }
     
     /**
@@ -56,9 +57,18 @@ public class StockManager
      * @param id The ID of the product.
      * @return The quantity of the given product in stock.
      */
-    public int numberInStock(int id)
+    public void numberInStock(int id)
     {
-        return 0;
+        for (Product product : stock){
+            int pID = product.getID();
+            if (pID == id){
+                System.out.println(product.toString());
+            }
+            else {
+                System.out.println("ID not found");
+           }  
+        }
+        
     }
 
     /**

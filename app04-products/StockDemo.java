@@ -34,6 +34,8 @@ public class StockDemo
         manager.printProductDetails();
         // Take delivery of 5 items of one of the products.
         manager.delivery(132, 5);
+        manager.delivery(37, 10);
+        manager.delivery(23, 7);
         manager.printProductDetails();
     }
     
