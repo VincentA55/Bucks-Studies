@@ -40,8 +40,8 @@ public class StockManager
       for (Product product : stock){
       if (id == product.getID()){
           product.increaseQuantity(amount);
+          System.out.println(product.acceptingDelivery());
         }
-      
     }
     }   
     

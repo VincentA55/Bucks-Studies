@@ -40,7 +40,8 @@ public class StockDemo
      */
     public void deliveryDemo()
     {
-        // Show details of all of the products.
+        System.out.println("New deliveries:");
+        System.out.println("=================");
         manager.delivery(132, 5);
         manager.delivery(37, 10);
         manager.delivery(23, 7);
@@ -51,8 +52,7 @@ public class StockDemo
         manager.delivery(48, 7);
         manager.delivery(12, 4);
         manager.delivery(133, 3);
-        System.out.println("New deliveries:");
-        this.manager.printAllProductDetails();
+        System.out.println("=================");
     }
     
     /**

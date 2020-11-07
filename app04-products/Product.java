@@ -57,6 +57,14 @@ public class Product
     {
         return id + ": " +  name + " (stock level: " + quantity + ")";
     }
+    
+    /**
+     * adds a * next to products that have recently excepted a delivery
+     */
+     public String acceptingDelivery()
+    {
+        return id + ": " +  name + " (stock level: " + quantity + "*)";
+    }
 
     /**
      * Restock with the given amount of this product.
