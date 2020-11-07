@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Iterator;
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -40,7 +40,8 @@ public class StockManager
       for (Product product : stock){
       if (id == product.getID()){
           product.increaseQuantity(amount);
-        }    
+        }
+      
     }
     }   
     
@@ -78,7 +79,7 @@ public class StockManager
     /**
      * Print details of all the products.
      */
-    public void printProductDetails()
+    public void printAllProductDetails()
     {
         System.out.println("Vinnys Stock List");
         System.out.println("=================");

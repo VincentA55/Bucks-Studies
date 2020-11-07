@@ -29,6 +29,8 @@ public class StockDemo
         manager.addProduct(new Product(48, "Meat Lamp"));
         manager.addProduct(new Product(12, "Swivle Chair"));
         manager.addProduct(new Product(133, "Radio that tells time"));
+        
+        this.manager.printAllProductDetails();
     }
     
     /**
@@ -36,13 +38,21 @@ public class StockDemo
      * might be used. Details of one product are shown, the
      * product is restocked, and then the details are shown again.
      */
-    public void demo()
+    public void deliveryDemo()
     {
         // Show details of all of the products.
         manager.delivery(132, 5);
         manager.delivery(37, 10);
         manager.delivery(23, 7);
-        manager.printProductDetails();
+        manager.delivery(1, 3);
+        manager.delivery(55, 15);
+        manager.delivery(111, 1);
+        manager.delivery(97, 6);
+        manager.delivery(48, 7);
+        manager.delivery(12, 4);
+        manager.delivery(133, 3);
+        System.out.println("New deliveries:");
+        this.manager.printAllProductDetails();
     }
     
     /**
