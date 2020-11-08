@@ -96,7 +96,6 @@ public class StockDemo
     public Product getProduct(int id)
     {
         Product product = manager.findProduct(id);
-        
         if(product == null) 
         {
             System.out.println("Product with ID: " + id +

@@ -27,6 +27,15 @@ public class Product
     }
 
     /**
+     * returns the product
+     */
+    public Product getProduct()
+    {
+        Product getter = new Product(this.id, this.name);
+        return getter;
+    }
+   
+    /**
      * @return The product's id.
      */
     public int getID()

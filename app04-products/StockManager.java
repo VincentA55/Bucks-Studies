@@ -52,8 +52,17 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
-        return null;
-    }
+        Product result = null;
+        for (Product product : stock){
+           int iid = product.getID();
+           if (id == iid){
+            result = (product.getProduct());
+            return result;
+           }
+        }
+        return result;
+     }   
+   
     
     /**
      * Locate a product with the given ID, and return how
