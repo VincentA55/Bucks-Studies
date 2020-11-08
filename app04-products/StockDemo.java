@@ -16,7 +16,7 @@ public class StockDemo
      * sample products.
      * I have hard coded them in to save myslef time while testing
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
         manager = new StockManager();
         manager.addProduct(new Product(132, "Clock Radio",0));
@@ -30,7 +30,7 @@ public class StockDemo
         manager.addProduct(new Product(12, "Swivle Chair",0));
         manager.addProduct(new Product(133, "Radio that tells time",0));
         
-        this.manager.printAllProductDetails();
+        manager.printAllProductDetails();
     }
     
     /**

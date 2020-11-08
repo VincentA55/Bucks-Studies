@@ -17,7 +17,7 @@ public class StockManager
      */
     public StockManager()
     {
-        stock = new ArrayList<>();
+        this.stock = new ArrayList<>();
     }
 
     /**
