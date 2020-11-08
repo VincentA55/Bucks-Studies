@@ -11,6 +11,8 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
+    
+    private Product product;
 
     /**
      * Initialise the stock manager.
@@ -57,8 +59,8 @@ public class StockManager
             return product;
            }
         }
-       System.out.println("Product with id:" + id + "cannot be found");
-       return null;
+       System.out.println("Product with id: " + id + " cannot be found");
+       return this.product;
      }   
   
      /**
@@ -71,9 +73,7 @@ public class StockManager
         Product product = findProduct(id);
         if(product != null) 
         {
-           
             product.sell(amount);
-           
         }
     }
     
