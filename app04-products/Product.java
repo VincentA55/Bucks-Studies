@@ -12,7 +12,7 @@ public class Product
     private String name;
     // The quantity of this product in stock.
     private int quantity;
-
+ 
     /**
      * Constructor for objects of class Product.
      * The initial stock quantity is zero.
@@ -31,11 +31,10 @@ public class Product
      */
     public Product getProduct()
     {
-        Product getter = new Product(this.id, this.name, this.quantity);
-        return getter;
+        return null;
     }
    
-    /**
+   /**
      * @return The product's id.
      */
     public int getID()

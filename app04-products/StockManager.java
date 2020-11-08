@@ -11,9 +11,7 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
-    
-    private Product product;
-
+  
     /**
      * Initialise the stock manager.
      */
@@ -55,12 +53,13 @@ public class StockManager
     public Product findProduct(int id)
     {
        for (Product product : stock){
-           if (id == product.getID()){
+           if (product.getID() == id)
+           {
             return product;
            }
-        }
+       }   
        System.out.println("Product with id: " + id + " cannot be found");
-       return this.product;
+       return null;
      }   
   
      /**
