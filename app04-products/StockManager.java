@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Iterator;
+
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -52,7 +52,7 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
-       for (Product product : stock){
+       for (Product product : stock) {
            if (product.getID() == id)
            {
             return product;
