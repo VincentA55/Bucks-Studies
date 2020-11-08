@@ -19,16 +19,16 @@ public class StockDemo
     public StockDemo()
     {
         manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
-        manager.addProduct(new Product(1, "Hat"));
-        manager.addProduct(new Product(55, "Sock"));
-        manager.addProduct(new Product(111, "Electric ruler"));
-        manager.addProduct(new Product(97, "Pet Rock"));
-        manager.addProduct(new Product(48, "Meat Lamp"));
-        manager.addProduct(new Product(12, "Swivle Chair"));
-        manager.addProduct(new Product(133, "Radio that tells time"));
+        manager.addProduct(new Product(132, "Clock Radio",0));
+        manager.addProduct(new Product(37,  "Mobile Phone",0));
+        manager.addProduct(new Product(23,  "Microwave Oven",0));
+        manager.addProduct(new Product(1, "Hat",0));
+        manager.addProduct(new Product(55, "Sock",0));
+        manager.addProduct(new Product(111, "Electric ruler",0));
+        manager.addProduct(new Product(97, "Pet Rock",0));
+        manager.addProduct(new Product(48, "Meat Lamp",0));
+        manager.addProduct(new Product(12, "Swivle Chair",0));
+        manager.addProduct(new Product(133, "Radio that tells time",0));
         
         this.manager.printAllProductDetails();
     }
@@ -63,27 +63,9 @@ public class StockDemo
     public void showDetails(int id)
     {
         Product product = getProduct(id);
-        
         if(product != null) 
         {
             System.out.println(product.toString());
-        }
-    }
-    
-    /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
-     */
-    public void sellProduct(int id)
-    {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            showDetails(id);
-            product.sellOne();
-            showDetails(id);
         }
     }
     
@@ -101,6 +83,7 @@ public class StockDemo
             System.out.println("Product with ID: " + id +
                                " is not recognised.");
         }
+        System.out.println(product);
         return product;
     }
 

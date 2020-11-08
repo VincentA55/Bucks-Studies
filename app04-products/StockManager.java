@@ -52,17 +52,30 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
-        Product result = null;
-        for (Product product : stock){
-           int iid = product.getID();
-           if (id == iid){
-            result = (product.getProduct());
-            return result;
+       for (Product product : stock){
+           if (id == product.getID()){
+            return product;
            }
         }
-        return result;
+       System.out.println("Product with id:" + id + "cannot be found");
+       return null;
      }   
-   
+  
+     /**
+     * Sell one of the given item.
+     * Show the before and after status of the product.
+     * @param id The ID of the product being sold.
+     */
+    public void sellProduct(int id,int amount)
+    {
+        Product product = findProduct(id);
+        if(product != null) 
+        {
+           
+            product.sell(amount);
+           
+        }
+    }
     
     /**
      * Locate a product with the given ID, and return how
@@ -82,7 +95,6 @@ public class StockManager
                 System.out.println("ID not found");
            }  
         }
-        
     }
 
     /**

@@ -19,11 +19,11 @@ public class Product
      * @param id The product's identifying number.
      * @param name The product's name.
      */
-    public Product(int id, String name)
+    public Product(int id, String name,int quantity)
     {
         this.id = id;
         this.name = name;
-        quantity = 0;
+        this.quantity = 0;
     }
 
     /**
@@ -31,7 +31,7 @@ public class Product
      */
     public Product getProduct()
     {
-        Product getter = new Product(this.id, this.name);
+        Product getter = new Product(this.id, this.name, this.quantity);
         return getter;
     }
    
@@ -98,15 +98,29 @@ public class Product
      * Sell one of these products.
      * An error is reported if there appears to be no stock.
      */
-    public void sellOne()
+    public void sell(int amount)
     {
+        System.out.println(toString());
         if(quantity > 0) 
         {
-            quantity--;
+            if (amount < 0)
+            {
+               System.out.println("Amount can not be less than 0");
+            }
+            else if(amount <= quantity)
+            {
+                this.quantity = this.quantity - amount;
+                System.out.println("Sold: " + amount + " " + name + "s");
+                toString();
+            }
+            else 
+            {
+                System.out.println("Amount to sell is greater than current stock level");
+            }
         }
         else 
         {
-            System.out.println(
+           System.out.println(
                 "Attempt to sell an out of stock item: " + name);
         }
     }
