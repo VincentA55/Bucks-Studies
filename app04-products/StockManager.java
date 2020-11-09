@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
