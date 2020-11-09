@@ -23,7 +23,7 @@ public class Product
     {
         this.id = id;
         this.name = name;
-        this.quantity = 0;
+        this.quantity = quantity;
     }
 
     /**
@@ -31,7 +31,8 @@ public class Product
      */
     public Product getProduct()
     {
-        return null;
+      Product productGetter = new Product(this.id, this.name, this.quantity);
+      return productGetter;
     }
    
    /**
@@ -49,7 +50,15 @@ public class Product
     {
         return name;
     }
-
+    
+    /**
+     * sets a new name for an existing product
+     */
+    public void setName(String newName)
+    {
+        this.name = newName;
+    }
+    
     /**
      * @return The quantity in stock.
      */
@@ -69,9 +78,9 @@ public class Product
     /**
      * adds a * next to products that have recently excepted a delivery
      */
-     public String acceptingDelivery()
+     public void acceptingDelivery()
     {
-        return id + ": " +  name + " (stock level: " + quantity + "*)";
+        System.out.println(id + ": " +  name + " (stock level: " + quantity + "*)");
     }
 
     /**
@@ -84,7 +93,8 @@ public class Product
     {
         if(amount > 0) 
         {
-            quantity += amount;
+            this.quantity = this.quantity + amount;
+            acceptingDelivery();
         }
         else 
         {

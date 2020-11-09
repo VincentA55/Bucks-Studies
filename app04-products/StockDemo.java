@@ -16,7 +16,7 @@ public class StockDemo
      * sample products.
      * I have hard coded them in to save myslef time while testing
      */
-    public StockDemo(StockManager manager)
+    public StockDemo()
     {
         manager = new StockManager();
         manager.addProduct(new Product(132, "Clock Radio",0));
@@ -86,7 +86,41 @@ public class StockDemo
         System.out.println(product);
         return product;
     }
-
+    
+    /** 
+     * renames a product
+     */
+    public void renameProduct(int id, String newName)
+    {
+       Product product = manager.findProduct(id);
+        if(product == null) 
+        {
+            System.out.println("Product with ID: " + id +
+                               " is not recognised.");
+        }
+        else if (id == product.getID())
+        {
+          String oldName = product.getName();
+          product.setName(newName);
+          System.out.println("Product " + oldName +" was renamed: " + product.getName());
+        }
+        
+    }
+    
+    /**
+     * Sell one of the given item.
+     * Show the before and after status of the product.
+     * @param id The ID of the product being sold.
+     */
+    public void sellProduct(int id,int amount)
+    {
+        Product product = manager.findProduct(id);
+        if(product != null) 
+        {
+            product.sell(amount);
+        }
+    }
+    
     /**
      * @return The stock manager.
      */
