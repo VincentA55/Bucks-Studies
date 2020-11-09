@@ -29,10 +29,10 @@ public class StockDemo
         manager.addProduct(new Product(48, "Meat Lamp",0));
         manager.addProduct(new Product(12, "Swivle Chair",0));
         manager.addProduct(new Product(133, "Radio that tells time",0));
-        
+
         manager.printAllProductDetails();
     }
-    
+
     /**
      * Provide a very simple demonstration of how a StockManager
      * might be used. Details of one product are shown, the
@@ -54,7 +54,7 @@ public class StockDemo
         manager.delivery(133, 3);
         System.out.println("=================");
     }
-    
+
     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -68,7 +68,7 @@ public class StockDemo
             System.out.println(product.toString());
         }
     }
-    
+
     /**
      * Get the product with the given id from the manager.
      * An error message is printed if there is no match.
@@ -81,32 +81,31 @@ public class StockDemo
         if(product == null) 
         {
             System.out.println("Product with ID: " + id +
-                               " is not recognised.");
+                " is not recognised.");
         }
         System.out.println(product);
         return product;
     }
-    
+
     /** 
      * renames a product
      */
     public void renameProduct(int id, String newName)
     {
-       Product product = manager.findProduct(id);
+        Product product = manager.findProduct(id);
         if(product == null) 
         {
             System.out.println("Product with ID: " + id +
-                               " is not recognised.");
+                " is not recognised.");
         }
         else if (id == product.getID())
         {
-          String oldName = product.getName();
-          product.setName(newName);
-          System.out.println("Product " + oldName +" was renamed: " + product.getName());
+            String oldName = product.getName();
+            product.setName(newName);
+            System.out.println("Product " + oldName +" was renamed: " + product.getName());
         }
-        
     }
-    
+
     /**
      * Sell one of the given item.
      * Show the before and after status of the product.
@@ -120,7 +119,7 @@ public class StockDemo
             product.sell(amount);
         }
     }
-    
+
     /**
      * @return The stock manager.
      */

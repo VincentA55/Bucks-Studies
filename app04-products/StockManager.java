@@ -11,7 +11,7 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
-  
+
     /**
      * Initialise the stock manager.
      */
@@ -28,7 +28,7 @@ public class StockManager
     {
         stock.add(item);
     }
-    
+
     /**
      * Receive a delivery of a particular product.
      * Increase the quantity of the product by the given amount.
@@ -37,13 +37,13 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
-      for (Product product : stock){
-      if (id == product.getID()){
-           product.increaseQuantity(amount);
+        for (Product product : stock){
+            if (id == product.getID()){
+                product.increaseQuantity(amount);
+            }
         }
-    }
     }   
-    
+
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -51,17 +51,27 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
-       for (Product product : stock) {
-           if (id == product.getID())
-           {
-            return product.getProduct();
-           }
-       }   
-       System.out.println("Product with id: " + id + " cannot be found");
-       return null;
-     }   
-  
-     /**
+        for (Product product : stock) {
+            if (id == product.getID())
+            {
+                return product.getProduct();
+            }
+        }   
+        System.out.println("Product with id: " + id + " cannot be found");
+        return null;
+    }   
+
+    /**
+     * removes a product based on ID
+     */
+    public void removeProduct(int id)
+    {
+        Product rProduct = findProduct(id);
+        this.stock.remove(rProduct);
+        System.out.println("Product has been deleted");
+    }
+
+    /**
      * Sell one of the given item.
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
@@ -74,7 +84,7 @@ public class StockManager
             product.sell(amount);
         }
     }
-    
+
     /**
      * Locate a product with the given ID, and return how
      * many of this item are in stock. If the ID does not
@@ -91,7 +101,7 @@ public class StockManager
             }
             else {
                 System.out.println("ID not found");
-           }  
+            }  
         }
     }
 
@@ -103,7 +113,7 @@ public class StockManager
         System.out.println("Vinnys Stock List");
         System.out.println("=================");
         for (Product product : stock){
-        System.out.println(product.toString());
+            System.out.println(product.toString());
         }
         System.out.println("=================");
     }

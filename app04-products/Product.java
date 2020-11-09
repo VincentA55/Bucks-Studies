@@ -12,7 +12,7 @@ public class Product
     private String name;
     // The quantity of this product in stock.
     private int quantity;
- 
+
     /**
      * Constructor for objects of class Product.
      * The initial stock quantity is zero.
@@ -31,11 +31,11 @@ public class Product
      */
     public Product getProduct()
     {
-      Product productGetter = new Product(this.id, this.name, this.quantity);
-      return productGetter;
+        Product productGetter = new Product(this.id, this.name, this.quantity);
+        return productGetter;
     }
-   
-   /**
+
+    /**
      * @return The product's id.
      */
     public int getID()
@@ -50,7 +50,7 @@ public class Product
     {
         return name;
     }
-    
+
     /**
      * sets a new name for an existing product
      */
@@ -58,7 +58,7 @@ public class Product
     {
         this.name = newName;
     }
-    
+
     /**
      * @return The quantity in stock.
      */
@@ -74,11 +74,11 @@ public class Product
     {
         return id + ": " +  name + " (stock level: " + quantity + ")";
     }
-    
+
     /**
      * adds a * next to products that have recently excepted a delivery
      */
-     public void acceptingDelivery()
+    public void acceptingDelivery()
     {
         System.out.println(id + ": " +  name + " (stock level: " + quantity + "*)");
     }
@@ -99,7 +99,7 @@ public class Product
         else 
         {
             System.out.println("Attempt to restock " + name +
-                               " with a non-positive amount: " + amount);
+                " with a non-positive amount: " + amount);
         }
     }
 
@@ -114,7 +114,7 @@ public class Product
         {
             if (amount < 0)
             {
-               System.out.println("Amount can not be less than 0");
+                System.out.println("Amount can not be less than 0");
             }
             else if(amount <= quantity)
             {
@@ -129,7 +129,7 @@ public class Product
         }
         else 
         {
-           System.out.println(
+            System.out.println(
                 "Attempt to sell an out of stock item: " + name);
         }
     }

@@ -1,0 +1,45 @@
+StockManager stockMan1 = new StockManager();
+StockDemo stockDem1 = new StockDemo();
+Vinnys Stock List
+=================
+132: Clock Radio (stock level: 0)
+37: Mobile Phone (stock level: 0)
+23: Microwave Oven (stock level: 0)
+1: Hat (stock level: 0)
+55: Sock (stock level: 0)
+111: Electric ruler (stock level: 0)
+97: Pet Rock (stock level: 0)
+48: Meat Lamp (stock level: 0)
+12: Swivle Chair (stock level: 0)
+133: Radio that tells time (stock level: 0)
+=================
+stockDem1.deliveryDemo();
+New deliveries:
+=================
+132: Clock Radio (stock level: 5*)
+37: Mobile Phone (stock level: 10*)
+23: Microwave Oven (stock level: 7*)
+1: Hat (stock level: 3*)
+55: Sock (stock level: 15*)
+111: Electric ruler (stock level: 1*)
+97: Pet Rock (stock level: 6*)
+48: Meat Lamp (stock level: 7*)
+12: Swivle Chair (stock level: 4*)
+133: Radio that tells time (stock level: 3*)
+=================
+stockDem1.sellProduct(55, 100);
+55: Sock (stock level: 15)
+Amount to sell is greater than current stock level
+stockDem1.sellProduct(55, 15);
+55: Sock (stock level: 15)
+Sold: 15 Socks
+stockDem1.renameProduct(55, "Big christmas sock");
+Product Sock was renamed: Big christmas sock
+stockMan1.removeProduct(97);
+Product with id: 97 cannot be found
+Product has been deleted
+stockDem1.getProduct(99)
+Product with id: 99 cannot be found
+Product with ID: 99 is not recognised.
+null
+    returned Object null
