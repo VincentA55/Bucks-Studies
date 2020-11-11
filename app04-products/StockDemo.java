@@ -16,9 +16,9 @@ public class StockDemo
      * sample products.
      * I have hard coded them in to save myslef time while testing
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
-        manager = new StockManager();
+        this.manager = manager;
         manager.addProduct(new Product(132, "Clock Radio",0));
         manager.addProduct(new Product(37,  "Mobile Phone",0));
         manager.addProduct(new Product(23,  "Microwave Oven",0));

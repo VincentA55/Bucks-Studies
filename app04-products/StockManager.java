@@ -53,7 +53,7 @@ public class StockManager
         for (Product product : stock) {
             if (id == product.getID())
             {
-                return product.getProduct();
+                return product;
             }
         }   
         System.out.println("Product with id: " + id + " cannot be found");

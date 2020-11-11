@@ -120,7 +120,7 @@ public class Product
             {
                 this.quantity = this.quantity - amount;
                 System.out.println("Sold: " + amount + " " + name + "s");
-                toString();
+                System.out.println(toString());
             }
             else 
             {
