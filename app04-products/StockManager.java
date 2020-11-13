@@ -59,7 +59,25 @@ public class StockManager
         System.out.println("Product with id: " + id + " cannot be found");
         return null;
     }   
-
+    
+    /**
+     * Get the product with the given id from the manager.
+     * An error message is printed if there is no match.
+     * @param id The ID of the product.
+     * @return The Product, or null if no matching one is found.
+     */
+    public Product getProduct(int id)
+    {
+        Product product = findProduct(id);
+        if(product == null) 
+        {
+            System.out.println("Product with ID: " + id +
+                " is not recognised.");
+        }
+        System.out.println(product);
+        return product;
+    }
+    
     /**
      * removes a product based on ID
      */
@@ -97,10 +115,27 @@ public class StockManager
             int pID = product.getID();
             if (pID == id){
                 System.out.println(product.toString());
-            }
-            else {
-                System.out.println("ID not found");
-            }  
+                break;
+            } 
+        }
+    }
+    
+    /** 
+     * renames a product
+     */
+    public void renameProduct(int id, String newName)
+    {
+        Product product = findProduct(id);
+        if(product == null) 
+        {
+            System.out.println("Product with ID: " + id +
+                " is not recognised.");
+        }
+        else if (id == product.getID())
+        {
+            String oldName = product.getName();
+            product.setName(newName);
+            System.out.println("Product " + oldName +" was renamed: " + product.getName());
         }
     }
 

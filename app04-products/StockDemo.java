@@ -62,61 +62,10 @@ public class StockDemo
      */
     public void showDetails(int id)
     {
-        Product product = getProduct(id);
+        Product product = manager.getProduct(id);
         if(product != null) 
         {
             System.out.println(product.toString());
-        }
-    }
-
-    /**
-     * Get the product with the given id from the manager.
-     * An error message is printed if there is no match.
-     * @param id The ID of the product.
-     * @return The Product, or null if no matching one is found.
-     */
-    public Product getProduct(int id)
-    {
-        Product product = manager.findProduct(id);
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                " is not recognised.");
-        }
-        System.out.println(product);
-        return product;
-    }
-
-    /** 
-     * renames a product
-     */
-    public void renameProduct(int id, String newName)
-    {
-        Product product = manager.findProduct(id);
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                " is not recognised.");
-        }
-        else if (id == product.getID())
-        {
-            String oldName = product.getName();
-            product.setName(newName);
-            System.out.println("Product " + oldName +" was renamed: " + product.getName());
-        }
-    }
-
-    /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
-     */
-    public void sellProduct(int id,int amount)
-    {
-        Product product = manager.findProduct(id);
-        if(product != null) 
-        {
-            product.sell(amount);
         }
     }
 
