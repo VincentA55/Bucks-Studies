@@ -4,13 +4,16 @@
  * stock manager so that users can add, edit,
  * print and remove stock products
  *
- * @author Student Name
- * @version 0.1
+ * @author Vincent Assolutissimamente
+ * @version 14/11/2020
  */
 public class StockApp
 {
     // Use to get user input
     private InputReader input;
+    
+    //the stock manager 
+    private StockManager manager;
     
     /**
      * Constructor for objects of class StockApp
@@ -18,6 +21,7 @@ public class StockApp
     public StockApp()
     {
         input = new InputReader();
+        this.manager = new StockManager();
     }
 
     /**
@@ -65,9 +69,9 @@ public class StockApp
      */
     private void printHeading()
     {
-        System.out.println("******************************");
+        System.out.println("*****************************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
-        System.out.println("******************************");
+        System.out.println("    App05: by Vincent Assolutissimamente");
+        System.out.println("*****************************************");
     }
 }
