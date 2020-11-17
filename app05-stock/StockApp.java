@@ -11,10 +11,10 @@ public class StockApp
 {
     // Use to get user input
     private InputReader input;
-    
+
     //the stock manager 
     private StockManager manager;
-    
+
     /**
      * Constructor for objects of class StockApp
      */
@@ -30,27 +30,52 @@ public class StockApp
     public void run()
     {
         printHeading();
-        getMenuChoice();
+        String choice = getMenuChoice();
+        acceptMenuChoice(choice);
     }
-    
+
     /**
      * 
      */
-    public void getMenuChoice()
+    public String getMenuChoice()
     {
         boolean finished = false;
-        
+        String choice =" ";
         while(!finished)
         {
             printHeading();
             printMenuChoices();
-           
-            String choice = input.getInput();
+
+            choice = input.getString();
             finished = true;
+        }
+        return choice;
+    }
+
+    /**
+     * accepts the input and directs it to each method
+     */
+    public void acceptMenuChoice(String choice){
+        if (choice.equals("add"))
+        {
+            addProduct();
         }
     }
     
-   
+    /**
+     * adds the input as a product
+     */
+    public void addProduct(){
+        System.out.println("Please enter the name of the product");
+        String name = input.getString();
+        
+        System.out.println("Please enter the ID number");
+        int id = input.getInt();
+        
+        manager.addProduct(new Product(id, name));
+        System.out.println("Product :" + id + " " + name + " added");
+    }
+    
     /**
      * Print out a menu of operation choices
      */
@@ -63,7 +88,7 @@ public class StockApp
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }
-    
+
     /**
      * Print the title of the program and the authors name
      */

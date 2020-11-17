@@ -19,7 +19,7 @@ public class Product
      * @param id The product's identifying number.
      * @param name The product's name.
      */
-    public Product(int id, String name,int quantity)
+    public Product(int id, String name)
     {
         this.id = id;
         this.name = name;
@@ -31,7 +31,7 @@ public class Product
      */
     public Product getProduct()
     {
-        Product productGetter = new Product(this.id, this.name, this.quantity);
+        Product productGetter = new Product(this.id, this.name);
         return productGetter;
     }
 
