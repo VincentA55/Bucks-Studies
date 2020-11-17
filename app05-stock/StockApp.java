@@ -35,6 +35,17 @@ public class StockApp
     }
 
     /**
+     * to be added after each method 
+     */
+    public void continueRun()
+    {
+        System.out.println();
+        System.out.println("*****************************************");
+        String nChoice = getMenuChoice();
+        acceptMenuChoice(nChoice);
+    }
+
+    /**
      * 
      */
     public String getMenuChoice()
@@ -43,7 +54,6 @@ public class StockApp
         String choice =" ";
         while(!finished)
         {
-            printHeading();
             printMenuChoices();
 
             choice = input.getString();
@@ -53,29 +63,54 @@ public class StockApp
     }
 
     /**
-     * accepts the input and directs it to each method
+     * accepts an input and directs it to each method
      */
     public void acceptMenuChoice(String choice){
         if (choice.equals("add"))
         {
             addProduct();
         }
+
+        else if (choice.equals("remove"))
+        {
+            removeProduct();
+        }
+        else 
+        {
+            System.out.println("Please choose one of the options above");
+        }
     }
-    
+
     /**
      * adds the input as a product
      */
     public void addProduct(){
         System.out.println("Please enter the name of the product");
         String name = input.getString();
-        
+
         System.out.println("Please enter the ID number");
         int id = input.getInt();
-        
+
         manager.addProduct(new Product(id, name));
         System.out.println("Product :" + id + " " + name + " added");
+
+        continueRun();
     }
-    
+
+    /**
+     *  calls on the remove method
+     */
+    public void removeProduct()
+    {
+        System.out.println("Please enter the ID of the product you would like to remove");
+        int id = input.getInt();
+
+        System.out.println("Would you like to delete: " +  " ?");
+        manager.getProduct(id);
+
+        continueRun();
+    }
+
     /**
      * Print out a menu of operation choices
      */

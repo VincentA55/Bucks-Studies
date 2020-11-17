@@ -71,8 +71,7 @@ public class StockManager
         Product product = findProduct(id);
         if(product == null) 
         {
-            System.out.println("Product with ID: " + id +
-                " is not recognised.");
+            System.out.println();
         }
         System.out.println(product);
         return product;
@@ -84,8 +83,9 @@ public class StockManager
     public void removeProduct(int id)
     {
         Product rProduct = findProduct(id);
+        String name = rProduct.getName();
         this.stock.remove(rProduct);
-        System.out.println("Product has been deleted");
+        System.out.println(name + " has been deleted");
     }
 
     /**
