@@ -4,13 +4,15 @@
  * stock manager so that users can add, edit,
  * print and remove stock products
  *
- * @author Student Name
- * @version 0.1
+ * @author Vincent Assolutissimamente
+ * @version 20/11/2020
  */
 public class StockApp
 {
     // Use to get user input
     private InputReader input;
+    
+    private StockManager manager = new StockManager();
     
     /**
      * Constructor for objects of class StockApp
