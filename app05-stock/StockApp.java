@@ -12,9 +12,9 @@ public class StockApp
 {
     // Use to get user input
     private InputReader input;
-    
+
     private StockManager manager; 
-    
+
     /**
      * Constructor for objects of class StockApp
      */
@@ -31,25 +31,30 @@ public class StockApp
     {
         getMenuChoice();
     }
-    
+
     /**
-     * 
+     * takes the input from the user, puts it into a HashSet then
+     * calls the assosiated method bases upon the input
      */
     public void getMenuChoice()
     {
         boolean finished = false;
-        
+
+        printHeading();
+        printMenuChoices();
+
         while(!finished)
         {
-            printHeading();
-            printMenuChoices();
-           
-            String choice = input.getString();
-            finished = true;
+            HashSet<String> input = this.input.getInput();  
+
+            if(input.contains("quit")){
+                finished = true;
+                System.out.println("Bye for now......");
+            }
+
         }
     }
-    
-   
+
     /**
      * Print out a menu of operation choices
      */
@@ -62,7 +67,7 @@ public class StockApp
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }
-    
+
     /**
      * Print the title of the program and the authors name
      */
