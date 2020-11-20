@@ -32,7 +32,7 @@ public class InputReader
         String inputLine = reader.nextLine();
         return inputLine;
     }
-    
+
     /**
      * Read a line of text from standard input (the text terminal),
      * and return it as an integer.
@@ -44,6 +44,27 @@ public class InputReader
         int inputInt = reader.nextInt();
         return inputInt;
     }
+
+    /**
+     * Read a line of text from standard input (the text terminal),
+     * and return it as a String.
+     *
+     * @return  A String typed by the user.
+     */
+    public HashSet<String> getInput()
+    {
+        System.out.print("> ");         // print prompt
+        String inputLine = reader.nextLine().trim().toLowerCase();
+
+        String[] wordArray = inputLine.split(" ");
+
+        HashSet<String> words = new HashSet<String>();
+        for (String word : wordArray) {
+            words.add(word);
+        }
+        return words;
+    }
 }
 
+    
 
