@@ -51,10 +51,30 @@ public class StockApp
                 finished = true;
                 System.out.println("Bye for now......");
             }
-
+            
+            else if (input.contains("add")){
+                addProduct();
+            }
         }
     }
 
+    /**
+     * creates and adds a product from the input
+     * 
+     */
+    public void addProduct()
+    {
+        System.out.println("Please input the name of the product");
+        String name = input.getString();
+        
+        System.out.println("Please input the ID number");
+        int iD = input.getInt();
+        
+        manager.addProduct(new Product(iD, name));
+        System.out.println("Product added: " + manager.findProduct(iD));
+        
+    }
+    
     /**
      * Print out a menu of operation choices
      */

@@ -47,6 +47,7 @@ public class InputReader
     /**
      * Read a line of text from standard input (the text terminal),
      * and return it as an array of Strings.
+     * also trims, splits by space and turns them to lower case
      *
      * @return  A String typed by the user.
      */
