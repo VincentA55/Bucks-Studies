@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 /**
  * This app provides a user interface to the
@@ -12,7 +13,7 @@ public class StockApp
     // Use to get user input
     private InputReader input;
     
-    private StockManager manager = new StockManager();
+    private StockManager manager; 
     
     /**
      * Constructor for objects of class StockApp
@@ -20,6 +21,7 @@ public class StockApp
     public StockApp()
     {
         input = new InputReader();
+        manager = new StockManager();
     }
 
     /**
@@ -42,7 +44,7 @@ public class StockApp
             printHeading();
             printMenuChoices();
            
-            String choice = input.getInput();
+            String choice = input.getString();
             finished = true;
         }
     }
