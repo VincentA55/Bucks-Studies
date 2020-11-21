@@ -45,18 +45,21 @@ public class StockApp
 
         while(!finished)
         {
-            
+
             HashSet<String> input = this.input.getInput();  
 
             if(input.contains("quit")){
                 finished = true;
                 System.out.println("Bye for now......");
             }
-            
+
             else if (input.contains("add")){
                 addProduct();
             }
-            
+
+            else if(input.contains("remove")){
+                removeProduct();
+            }
         }
     }
 
@@ -68,15 +71,24 @@ public class StockApp
     {
         System.out.println("Please input the name of the product");
         String name = input.getString();
-        
+
         System.out.println("Please input the ID number");
         int iD = input.getInt();
-        
+
         manager.addProduct(new Product(iD, name));
         System.out.println("Product added: " + manager.findProduct(iD));
-        
+
     }
-    
+
+    /**
+     * removes a product from the array list stock
+     */
+    public void removeProduct()
+    {
+        System.out.println("Please enter the ID number");
+        System.out.println("of the product you would like to remove");
+    }
+
     /**
      * Print out a menu of operation choices
      */
