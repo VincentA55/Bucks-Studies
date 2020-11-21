@@ -55,10 +55,18 @@ public class StockApp
 
             else if (input.contains("add")){
                 addProduct();
+
             }
 
             else if(input.contains("remove")){
                 removeProduct();
+            }
+
+            else if (input.contains("print")){
+                //printAll();
+            }
+            else {
+                System.out.println("Please select one of the above options");
             }
         }
     }
@@ -85,8 +93,30 @@ public class StockApp
      */
     public void removeProduct()
     {
+        System.out.println(" ");
         System.out.println("Please enter the ID number");
         System.out.println("of the product you would like to remove");
+        int iD = input.getInt();
+
+        System.out.println("Would you like to remove:");
+        System.out.println("----» " + manager.findProduct(iD) + " ?");
+        System.out.println("Yes / No");
+        HashSet<String> descision = input.getInput();
+
+        if (descision.contains("yes")){
+            System.out.println(manager.findProduct(iD) + " successfully removed");
+            manager.removeProduct(iD);
+
+        }
+
+        else if (descision.contains("no")){
+            System.out.println("Ok then");
+        }
+        
+        else {
+            System.out.println("Test");
+        }
+
     }
 
     /**
