@@ -28,7 +28,8 @@ public class StockApp
      * 
      */
     public void run()
-    {
+    { 
+        printHeading();
         getMenuChoice();
     }
 
@@ -40,9 +41,8 @@ public class StockApp
     {
         boolean finished = false;
 
-        printHeading();
         printMenuChoices();
-
+        
         while(!finished)
         {
 
@@ -55,6 +55,7 @@ public class StockApp
 
             else if (input.contains("add")){
                 addProduct();
+                finished = true;
 
             }
 
@@ -63,12 +64,14 @@ public class StockApp
             }
 
             else if (input.contains("print")){
-                //printAll();
+               manager.printAllProductDetails();
             }
             else {
-                System.out.println("Please select one of the above options");
+
             }
         }
+        getMenuChoice();
+        
     }
 
     /**
@@ -101,22 +104,27 @@ public class StockApp
         System.out.println("Would you like to remove:");
         System.out.println("----» " + manager.findProduct(iD) + " ?");
         System.out.println("Yes / No");
-        HashSet<String> descision = input.getInput();
+        String descision = input.getString();
 
-        if (descision.contains("yes")){
-            System.out.println(manager.findProduct(iD) + " successfully removed");
-            manager.removeProduct(iD);
+        boolean finished = false;
+        while (!finished){
+            if (descision.contains("yes")){
+                System.out.println(manager.findProduct(iD) + " successfully removed");
+                manager.removeProduct(iD);
+                finished = true;
+            }
+
+            else if (descision.contains("no")){
+                System.out.println("Ok then");
+                finished = true;
+            }
+
+            else {
+                System.out.println("Test else output");
+                finished = true;
+            }
 
         }
-
-        else if (descision.contains("no")){
-            System.out.println("Ok then");
-        }
-        
-        else {
-            System.out.println("Test");
-        }
-
     }
 
     /**

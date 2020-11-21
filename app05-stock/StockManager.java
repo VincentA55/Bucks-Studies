@@ -84,7 +84,7 @@ public class StockManager
     {
         Product rProduct = findProduct(id);
         String name = rProduct.getName();
-        this.stock.remove(rProduct);
+        this.stock.remove(findProduct(id));
         System.out.println(name + " has been deleted");
     }
 
