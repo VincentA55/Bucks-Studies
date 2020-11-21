@@ -95,9 +95,9 @@ public class StockApp
      */
     private void printHeading()
     {
-        System.out.println("******************************");
+        System.out.println("*****************************************");
         System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Student Name");
-        System.out.println("******************************");
+        System.out.println("    App05: by Vincent Assolutissimamente");
+        System.out.println("******************************************");
     }
 }
