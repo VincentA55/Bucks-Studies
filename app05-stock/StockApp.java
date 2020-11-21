@@ -42,7 +42,7 @@ public class StockApp
         boolean finished = false;
 
         printMenuChoices();
-        
+
         while(!finished)
         {
 
@@ -51,27 +51,22 @@ public class StockApp
             if(input.contains("quit")){
                 finished = true;
                 System.out.println("Bye for now......");
+
             }
 
             else if (input.contains("add")){
                 addProduct();
-                finished = true;
-
             }
 
             else if(input.contains("remove")){
-                removeProduct();
+               removeProduct();
             }
 
             else if (input.contains("print")){
-               manager.printAllProductDetails();
-            }
-            else {
-
+                manager.printAllProductDetails();
             }
         }
-        getMenuChoice();
-        
+
     }
 
     /**
@@ -100,31 +95,9 @@ public class StockApp
         System.out.println("Please enter the ID number");
         System.out.println("of the product you would like to remove");
         int iD = input.getInt();
+        manager.removeProduct(iD);
 
-        System.out.println("Would you like to remove:");
-        System.out.println("----» " + manager.findProduct(iD) + " ?");
-        System.out.println("Yes / No");
-        String descision = input.getString();
-
-        boolean finished = false;
-        while (!finished){
-            if (descision.contains("yes")){
-                System.out.println(manager.findProduct(iD) + " successfully removed");
-                manager.removeProduct(iD);
-                finished = true;
-            }
-
-            else if (descision.contains("no")){
-                System.out.println("Ok then");
-                finished = true;
-            }
-
-            else {
-                System.out.println("Test else output");
-                finished = true;
-            }
-
-        }
+        
     }
 
     /**
