@@ -45,6 +45,7 @@ public class StockApp
 
         while(!finished)
         {
+            
             HashSet<String> input = this.input.getInput();  
 
             if(input.contains("quit")){
@@ -55,6 +56,7 @@ public class StockApp
             else if (input.contains("add")){
                 addProduct();
             }
+            
         }
     }
 
