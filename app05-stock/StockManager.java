@@ -62,6 +62,18 @@ public class StockManager
     }   
     
     /**
+     * returns product whos stock levels are low
+     */
+    public void lowStock()
+    {
+        for (Product product : stock){
+            if (product.getQuantity() <= 10){
+                System.out.println(product.toString());
+            }
+        }
+    }
+    
+    /**
      * finds a product based on its name
      */
     public Product searchName(HashSet<String> search)

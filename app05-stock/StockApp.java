@@ -77,6 +77,10 @@ public class StockApp
             else if (input.contains("search")){
                 searchProduct();
             }
+            
+            else if (input.contains("low")){
+                lowStock();
+            }
         }
 
     }
@@ -148,6 +152,14 @@ public class StockApp
     {
         System.out.println("Please type in the name of the product");
        System.out.println(manager.searchName(input.getInput()));
+    }
+    
+    /**
+     *  prints a list of products whos stocks levels are low
+     */
+    public void lowStock()
+    {
+        manager.lowStock();
     }
     
     /**
