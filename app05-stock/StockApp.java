@@ -69,6 +69,14 @@ public class StockApp
             else if (input.contains("deliver")){
                 deliverProduct();
             }
+            
+            else if (input.contains("sell")){
+                sellProduct();
+            }
+            
+            else if (input.contains("search")){
+                searchProduct();
+            }
         }
 
     }
@@ -120,6 +128,29 @@ public class StockApp
     }
     
     /**
+     * sells an amount of a product in stock
+     */
+    private void sellProduct()
+    {
+        System.out.println("Please enter the ID number of the product");
+        int iD = input.getInt();
+        
+        System.out.println("Enter the amount being sold");
+        int amount = input.getInt();
+        
+        manager.sellProduct(iD, amount);
+    }
+    
+    /**
+     * searches for a product based on its name
+     */
+    private void searchProduct()
+    {
+        System.out.println("Please type in the name of the product");
+       System.out.println(manager.searchName(input.getInput()));
+    }
+    
+    /**
      * Print out a menu of operation choices
      */
     private void printMenuChoices()
@@ -128,6 +159,11 @@ public class StockApp
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
         System.out.println("    PrintAll:   Print all products");
+        System.out.println("    Deliver:    Increases the amount in stock");
+        System.out.println("    Sell:       Decreases the amount in stock");
+        System.out.println("    Search:     Searches based on product name");
+        System.out.println("    Low Stock:  Prints a list of products with low stock level");
+        System.out.println("    Restock:    Restocks all low level products to minimum");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }

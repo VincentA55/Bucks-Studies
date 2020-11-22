@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -59,6 +60,20 @@ public class StockManager
         System.out.println("Product with id: " + id + " cannot be found");
         return null;
     }   
+    
+    /**
+     * finds a product based on its name
+     */
+    public Product searchName(HashSet<String> search)
+    {
+        for (Product product : stock){
+            if (search.contains(product.getName())){
+                return product;
+            }
+            return null;
+        }
+        return null;
+    }
     
     /**
      * Get the product with the given id from the manager.
