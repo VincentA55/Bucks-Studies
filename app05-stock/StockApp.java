@@ -65,6 +65,10 @@ public class StockApp
             else if (input.contains("print")){
                 manager.printAllProductDetails();
             }
+            
+            else if (input.contains("deliver")){
+                deliverProduct();
+            }
         }
 
     }
@@ -100,6 +104,21 @@ public class StockApp
         
     }
 
+    /**
+     * delivers a number of stock of a product
+     */
+    private void deliverProduct()
+    { 
+       System.out.println("Plese enter the ID number of the produt");
+       int iD = input.getInt();
+       System.out.println(manager.findProduct(iD));
+       
+       System.out.println("Enter the amount being delivered");
+       int amount = input.getInt();
+       manager.delivery(iD, amount);
+       
+    }
+    
     /**
      * Print out a menu of operation choices
      */
