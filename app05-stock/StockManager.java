@@ -92,15 +92,15 @@ public class StockManager
     /**
      * finds a product based on its name
      */
-    public Product searchName(HashSet<String> search)
+    public String searchName(HashSet<String> search)
     {
         for (Product product : stock){
             if (search.contains(product.getName())){
-                return product;
+                return product.toString();
             }
-            return null;
+            return "Product not found ";
         }
-        return null;
+        return "Product cant be found";
     }
 
     /**

@@ -1,0 +1,143 @@
+quit
+Bye for now......
+StockApp stockApp1 = new StockApp();
+stockApp1.run();
+*****************************************
+ Stock Management Application 
+    App05: by Vincent Assolutissimamente
+******************************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Deliver:    Increases the amount in stock
+    Sell:       Decreases the amount in stock
+    Search:     Searches based on product name
+    Low Stock:  Prints a list of products with low stock level
+    Restock:    Restocks all low level products to minimum
+    Quit:       Quit the program
+
+> add
+Please input the name of the product
+> Samsung Galaxy S10
+Please input the ID number
+> 101
+Product added: 101: Samsung Galaxy S10 (stock level: 0)
+> > add
+Please input the name of the product
+> Samsung Galaxy S20
+Please input the ID number
+> 102
+Product added: 102: Samsung Galaxy S20 (stock level: 0)
+> > add
+Please input the name of the product
+> Apple iPhone 11
+Please input the ID number
+> 103
+Product added: 103: Apple iPhone 11 (stock level: 0)
+> > add product
+Please input the name of the product
+> Apple iPhone 12
+Please input the ID number
+> 104
+Product added: 104: Apple iPhone 12 (stock level: 0)
+> > Add Product
+Please input the name of the product
+> Motorola G9 Plus
+Please input the ID number
+> 105
+Product added: 105: Motorola G9 Plus (stock level: 0)
+> > add product
+Please input the name of the product
+> Google Pixel 5
+Please input the ID number
+> 103
+Product added: 103: Apple iPhone 11 (stock level: 0)
+> > add product
+Please input the name of the product
+>  
+Please input the ID number
+> 106
+Product added: 106:   (stock level: 0)
+> > remove
+ 
+Please enter the ID number
+of the product you would like to remove
+> 103
+Apple iPhone 11 has been deleted
+> > remove
+ 
+Please enter the ID number
+of the product you would like to remove
+> 203
+Product with id: 203 cannot be found
+    Exception occurred.
+stockApp1.getMenuChoice();
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    PrintAll:   Print all products
+    Deliver:    Increases the amount in stock
+    Sell:       Decreases the amount in stock
+    Search:     Searches based on product name
+    Low Stock:  Prints a list of products with low stock level
+    Restock:    Restocks all low level products to minimum
+    Quit:       Quit the program
+
+> > print
+Vinnys Stock List
+=================
+101: Samsung Galaxy S10 (stock level: 0)
+102: Samsung Galaxy S20 (stock level: 0)
+104: Apple iPhone 12 (stock level: 0)
+105: Motorola G9 Plus (stock level: 0)
+103: Google Pixel 5 (stock level: 0)
+106:   (stock level: 0)
+=================
+> deliver
+Plese enter the ID number of the produt
+> 102
+102: Samsung Galaxy S20 (stock level: 0)
+Enter the amount being delivered
+> 8
+102: Samsung Galaxy S20 (stock level: 8*)
+> > deliver
+Plese enter the ID number of the produt
+> 102
+102: Samsung Galaxy S20 (stock level: 8)
+Enter the amount being delivered
+> -4
+Attempt to restock Samsung Galaxy S20 with a non-positive amount: -4
+> > sell
+Please enter the ID number of the product
+> 102
+Enter the amount being sold
+> 2
+102: Samsung Galaxy S20 (stock level: 8)
+Sold: 2 Samsung Galaxy S20s
+102: Samsung Galaxy S20 (stock level: 6)
+> > sell
+Please enter the ID number of the product
+> 102
+Enter the amount being sold
+> 10
+102: Samsung Galaxy S20 (stock level: 6)
+Amount to sell is greater than current stock level
+> > search
+Please type in the name of the product
+> samsung
+null
+> search
+Please type in the name of the product
+> Samsung
+null
+> low stock
+Stock levels below minimum (10) 
+*******************************
+101: Samsung Galaxy S10 (stock level: 0)
+102: Samsung Galaxy S20 (stock level: 6)
+104: Apple iPhone 12 (stock level: 0)
+105: Motorola G9 Plus (stock level: 0)
+103: Google Pixel 5 (stock level: 0)
+106:   (stock level: 0)
+> 

@@ -1,3 +1,5 @@
+quit
+Bye for now......
 StockApp stockApp1 = new StockApp();
 stockApp1.run();
 *****************************************
@@ -15,7 +17,7 @@ stockApp1.run();
     Restock:    Restocks all low level products to minimum
     Quit:       Quit the program
 
-> add 
+> add
 Please input the name of the product
 > Samsung Galaxy S10
 Please input the ID number
@@ -33,25 +35,25 @@ Please input the name of the product
 Please input the ID number
 > 103
 Product added: 103: Apple iPhone 11 (stock level: 0)
-> > add
+> > add product
 Please input the name of the product
 > Apple iPhone 12
 Please input the ID number
 > 104
 Product added: 104: Apple iPhone 12 (stock level: 0)
-> > add
+> > Add Product
 Please input the name of the product
 > Motorola G9 Plus
 Please input the ID number
 > 105
 Product added: 105: Motorola G9 Plus (stock level: 0)
-> > add
+> > add product
 Please input the name of the product
 > Google Pixel 5
 Please input the ID number
 > 103
 Product added: 103: Apple iPhone 11 (stock level: 0)
-> > add
+> > add product
 Please input the name of the product
 >  
 Please input the ID number
