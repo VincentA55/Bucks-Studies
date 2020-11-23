@@ -51,7 +51,6 @@ public class StockApp
             if(input.contains("quit")){
                 finished = true;
                 System.out.println("Bye for now......");
-
             }
 
             else if (input.contains("add")){
