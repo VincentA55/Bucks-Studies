@@ -74,6 +74,19 @@ public class StockManager
     }
     
     /**
+     * restocks products up to the minimum of 10 if below
+     */
+    public void reStock()
+    {
+        for(Product product : stock){
+            int toAdd = (10 - product.getQuantity());
+            if (product.getQuantity() < 10){
+                delivery(product.getID(), toAdd);
+            }
+        }
+    }
+    
+    /**
      * finds a product based on its name
      */
     public Product searchName(HashSet<String> search)

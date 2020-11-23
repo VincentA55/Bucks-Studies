@@ -25,7 +25,7 @@ public class StockApp
     }
 
     /**
-     * 
+     * starts up the window
      */
     public void run()
     { 
@@ -81,6 +81,10 @@ public class StockApp
             else if (input.contains("low")){
                 lowStock();
             }
+            
+            else if (input.contains("restock")){
+                reStock();
+            }
         }
 
     }
@@ -112,8 +116,6 @@ public class StockApp
         System.out.println("of the product you would like to remove");
         int iD = input.getInt();
         manager.removeProduct(iD);
-
-        
     }
 
     /**
@@ -128,7 +130,6 @@ public class StockApp
        System.out.println("Enter the amount being delivered");
        int amount = input.getInt();
        manager.delivery(iD, amount);
-       
     }
     
     /**
@@ -151,7 +152,7 @@ public class StockApp
     private void searchProduct()
     {
         System.out.println("Please type in the name of the product");
-       System.out.println(manager.searchName(input.getInput()));
+        System.out.println(manager.searchName(input.getInput()));
     }
     
     /**
@@ -159,7 +160,19 @@ public class StockApp
      */
     public void lowStock()
     {
+        System.out.println("Stock levels below minimum (10) ");
+        System.out.println("*******************************");
         manager.lowStock();
+    }
+    
+    /**
+     * points to the restock method in StockManager
+     */
+    public void reStock()
+    {
+        System.out.println("Re-stocked products");
+        System.out.println("*******************");
+        manager.reStock();
     }
     
     /**
