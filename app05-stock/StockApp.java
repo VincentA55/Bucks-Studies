@@ -59,29 +59,29 @@ public class StockApp
             }
 
             else if(input.contains("remove")){
-               removeProduct();
+                removeProduct();
             }
 
             else if (input.contains("print")){
                 manager.printAllProductDetails();
             }
-            
+
             else if (input.contains("deliver")){
                 deliverProduct();
             }
-            
+
             else if (input.contains("sell")){
                 sellProduct();
             }
-            
+
             else if (input.contains("search")){
                 searchProduct();
             }
-            
+
             else if (input.contains("low")){
                 lowStock();
             }
-            
+
             else if (input.contains("restock")){
                 reStock();
             }
@@ -103,7 +103,6 @@ public class StockApp
 
         manager.addProduct(new Product(iD, name));
         System.out.println("Product added: " + manager.findProduct(iD));
-
     }
 
     /**
@@ -123,15 +122,15 @@ public class StockApp
      */
     private void deliverProduct()
     { 
-       System.out.println("Plese enter the ID number of the produt");
-       int iD = input.getInt();
-       System.out.println(manager.findProduct(iD));
-       
-       System.out.println("Enter the amount being delivered");
-       int amount = input.getInt();
-       manager.delivery(iD, amount);
+        System.out.println("Plese enter the ID number of the produt");
+        int iD = input.getInt();
+        System.out.println(manager.findProduct(iD));
+
+        System.out.println("Enter the amount being delivered");
+        int amount = input.getInt();
+        manager.delivery(iD, amount);
     }
-    
+
     /**
      * sells an amount of a product in stock
      */
@@ -139,13 +138,13 @@ public class StockApp
     {
         System.out.println("Please enter the ID number of the product");
         int iD = input.getInt();
-        
+
         System.out.println("Enter the amount being sold");
         int amount = input.getInt();
-        
+
         manager.sellProduct(iD, amount);
     }
-    
+
     /**
      * searches for a product based on its name
      */
@@ -154,7 +153,7 @@ public class StockApp
         System.out.println("Please type in the name of the product");
         System.out.println(manager.searchName(input.getInput()));
     }
-    
+
     /**
      *  prints a list of products whos stocks levels are low
      */
@@ -164,7 +163,7 @@ public class StockApp
         System.out.println("*******************************");
         manager.lowStock();
     }
-    
+
     /**
      * points to the restock method in StockManager
      */
@@ -174,7 +173,7 @@ public class StockApp
         System.out.println("*******************");
         manager.reStock();
     }
-    
+
     /**
      * Print out a menu of operation choices
      */

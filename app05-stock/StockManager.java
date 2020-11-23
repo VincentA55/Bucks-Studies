@@ -26,7 +26,10 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+        int iD = item.getID();
+        if(checkProduct(iD) != iD){
+            stock.add(item);
+        }
     }
 
     /**
@@ -60,7 +63,7 @@ public class StockManager
         System.out.println("Product with id: " + id + " cannot be found");
         return null;
     }   
-    
+
     /**
      * returns product whos stock levels are low
      */
@@ -72,7 +75,7 @@ public class StockManager
             }
         }
     }
-    
+
     /**
      * restocks products up to the minimum of 10 if below
      */
@@ -85,7 +88,7 @@ public class StockManager
             }
         }
     }
-    
+
     /**
      * finds a product based on its name
      */
@@ -99,7 +102,27 @@ public class StockManager
         }
         return null;
     }
-    
+
+    /**
+     * checks to see if an id for a product already exists
+     */
+    public int checkProduct(int id)
+    {
+        for (Product product : stock){
+            if (id != product.getID()){
+                int fID = id+ 1;
+                return fID;
+            }
+
+            else {
+                System.out.println("Error : that ID already exists!");
+                int fID = id;
+                return fID;
+            }
+        }
+       return id +1;
+    }
+
     /**
      * Get the product with the given id from the manager.
      * An error message is printed if there is no match.
@@ -116,7 +139,7 @@ public class StockManager
         System.out.println(product);
         return product;
     }
-    
+
     /**
      * removes a product based on ID
      */
@@ -159,7 +182,7 @@ public class StockManager
             } 
         }
     }
-    
+
     /** 
      * renames a product
      */
